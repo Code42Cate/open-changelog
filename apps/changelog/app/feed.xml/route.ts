@@ -12,7 +12,7 @@ const feed = new RSS({
 export async function GET() {
   const logs = await getLocalChangelog();
 
-  logs.map((log) => {
+  logs.forEach((log) => {
     feed.item({
       title: log.attributes["title"],
       url: `${config.baseUrl}?p=${log.date}`,
