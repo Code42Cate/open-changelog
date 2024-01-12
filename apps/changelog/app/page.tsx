@@ -8,6 +8,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { RssIcon } from "lucide-react";
 import Link from "next/link";
 import { getLocalChangelog } from "./logs";
+import { config } from "@/config.changelog";
 
 const tagColors = {
   new: "bg-emerald-200 text-emerald-900",
@@ -21,7 +22,7 @@ export default async function Page() {
   return (
     <main className="mx-auto flex max-w-4xl flex-col rounded-xl border border-neutral-300 bg-white p-4 shadow-sm">
       <div className="flex flex-row items-center justify-between">
-        <h1 className="text-3xl font-bold">Changelog</h1>
+        <h1 className="text-3xl font-bold">{config.title}</h1>
         <Link href="/feed.xml">
           <span aria-hidden className="sr-only">
             RSS Feed
@@ -29,9 +30,7 @@ export default async function Page() {
           <RssIcon className="h-6 w-6 text-neutral-700 hover:text-neutral-900" />
         </Link>
       </div>
-      <div className="pt-2 text-sm text-neutral-700">
-        Follow up on the latest improvements and updates.
-      </div>
+      <div className="pt-2 text-sm text-neutral-700">{config.description}</div>
       <div className="flex flex-col pt-8">
         {changelog.map(({ date, attributes, body }) => (
           <div
