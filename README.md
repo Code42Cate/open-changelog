@@ -69,7 +69,7 @@ This will build the image (~160MB) with the production build of the app. You can
 docker run -p 3000:3000 changelog
 ```
 
-The [demo](https://open-changelog.sliplane.app) is deployed with [Sliplane](https://sliplane.io/).
+The [demo](https://open-changelog.sliplane.app) is deployed with [Sliplane](https://sliplane.io?utm_source=github&utm_medium=link&utm_campaign=open-changelog)
 
 ## License
 
