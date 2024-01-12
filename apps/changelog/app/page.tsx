@@ -4,9 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@ui/components/accordion";
-import { readFileSync, readdirSync } from "fs";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import fm from "front-matter";
+import { RssIcon } from "lucide-react";
+import Link from "next/link";
+import { getLocalChangelog } from "./logs";
 
 const tagColors = {
   new: "bg-emerald-200 text-emerald-900",
@@ -14,30 +15,20 @@ const tagColors = {
   fixed: "bg-amber-200 text-amber-900",
 };
 
-function getLocalChangelog() {
-  const files = readdirSync("data")
-    .filter((file) => file.match(/\d{4}-\d{2}-\d{2}\.mdx/))
-    .sort((a, b) => {
-      const [aDate] = a.split(".");
-      const [bDate] = b.split(".");
-      return new Date(bDate).getTime() - new Date(aDate).getTime();
-    });
-
-  const data = files.map((file) => {
-    const [date] = file.split(".");
-    const { attributes, body } = fm(readFileSync(`data/${file}`, "utf-8"));
-    return { date, body, attributes };
-  });
-
-  return data;
-}
-
 export default async function Page() {
-  const changelog = getLocalChangelog();
+  const changelog = await getLocalChangelog();
 
   return (
     <main className="mx-auto flex max-w-4xl flex-col rounded-xl border border-neutral-300 bg-white p-4 shadow-sm">
-      <h1 className="text-3xl font-bold">Changelog</h1>
+      <div className="flex flex-row items-center justify-between">
+        <h1 className="text-3xl font-bold">Changelog</h1>
+        <Link href="/feed.xml">
+          <span aria-hidden className="sr-only">
+            RSS Feed
+          </span>
+          <RssIcon className="h-6 w-6 text-neutral-700 hover:text-neutral-900" />
+        </Link>
+      </div>
       <div className="pt-2 text-sm text-neutral-700">
         Follow up on the latest improvements and updates.
       </div>
