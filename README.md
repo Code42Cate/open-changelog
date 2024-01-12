@@ -26,7 +26,7 @@ If you care about that sort of thing, Google Lighthouse also thinks it's cool:
 
 ## Roadmap
 
-- [ ] RSS Feeds
+- [x] RSS Feeds
 - [ ] Email notifications
 - [ ] I18N
 - [ ] Branding
