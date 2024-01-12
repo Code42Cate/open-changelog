@@ -1,0 +1,23 @@
+---
+title: Redis 6.0.0
+tags: [new, improved, fixed]
+summary: Redis 6.0.0 is slightly better than Redis 5.0.0. It is also the first release of the new 6.0 stable branch. Trust me bro.
+---
+
+Hello world 🚀
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+### Changed
+
+- Drop ancient browsers support (use `.fromCodePoint` and other features).
+- Rewrite to ESM (including all plugins/deps). CJS fallback still available.
+  No signatures changed, except `markdown-it-emoji` plugin.
+- Dropped `dist/` folder from repo, build on package publish.
+- Set `punicode.js` as external dependency.
+
+### Fixed
+
+- Html tokens inside img alt are now rendered as their original text, #896.
+- Hardbreaks inside img alt are now rendered as newlines.

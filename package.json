@@ -1,0 +1,30 @@
+{
+  "name": "open-changelog",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "email": "jonas.scholz@bbscholz.de",
+    "name": "Jonas Scholz"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "ui:add": "pnpm --filter ui ui:add"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.11.3",
+    "eslint": "^8.56.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.2",
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  }
+}

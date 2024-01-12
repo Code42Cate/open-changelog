@@ -1,0 +1,28 @@
+
+p {
+  @apply text-black;
+}
+
+h3 {
+  @apply text-black font-semibold text-lg;
+}
+
+li {
+  @apply text-black;
+}
+
+ul {
+  @apply list-disc list-inside;
+}
+
+a {
+  @apply text-blue-500 hover:underline underline-offset-4 hover:text-blue-600;
+}
+
+img {
+  @apply mx-auto;
+}
+
+code {
+  @apply bg-gray-200 rounded px-1;
+}
