@@ -10,6 +10,14 @@ If you care about that sort of thing, Google Lighthouse also thinks it's cool:
 
 <img src="docs/lighthouse.png" alt="Lighthouse Score" width="400"/>
 
+## Features
+
+- 📝 MDX based logs
+- 📦 Easy to deploy
+- 📣 RSS feed
+- 🤖 100% serverside rendered
+- 🐳 Dockerized
+
 ## Built with 🚀
 
 - [Next.js](https://nextjs.org/)
@@ -53,6 +61,17 @@ summary: a one or two sentence summary for your lazy readers
 ---
 
 Actual content goes here
+```
+
+To configure the changelog, you can change the defined properties in `apps/changelog/config.changelog.ts`.
+
+```typescript
+export const config: Config = {
+  title: "Changelog",
+  baseUrl: "https://open-changelog.sliplane.app",
+  description: "Changelog for the OpenChangelog project",
+  author: "Jonas Scholz",
+};
 ```
 
 ### Deploy
