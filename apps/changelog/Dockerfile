@@ -36,6 +36,7 @@ USER nextjs
 
 COPY --from=installer /app/apps/changelog/next.config.js .
 COPY --from=installer /app/apps/changelog/package.json .
+COPY --from=installer /app/apps/changelog/data ./apps/changelog/data
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
