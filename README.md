@@ -1,4 +1,4 @@
-# Open Changelog 🪸
+# OpenChangelog 🪸
 
 OpenChangelog is a simple open-source changelog webapp based on Next.js and MDX.
 
