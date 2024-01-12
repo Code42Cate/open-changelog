@@ -2,14 +2,14 @@ import RSS from "rss";
 import { getLocalChangelog } from "../logs";
 import { config } from "@/config.changelog";
 
-const feed = new RSS({
-  title: config.title,
-  description: config.description,
-  site_url: config.baseUrl,
-  feed_url: `${config.baseUrl}/feed.xml`,
-});
-
 export async function GET() {
+  const feed = new RSS({
+    title: config.title,
+    description: config.description,
+    site_url: config.baseUrl,
+    feed_url: `${config.baseUrl}/feed.xml`,
+  });
+
   const logs = await getLocalChangelog();
 
   logs.forEach((log) => {
