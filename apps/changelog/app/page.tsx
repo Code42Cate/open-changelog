@@ -23,7 +23,7 @@ export default async function Page() {
     <main className="mx-auto flex max-w-4xl flex-col rounded-xl border border-neutral-300 bg-white p-4 shadow-sm">
       <div className="flex flex-row items-center justify-between">
         <h1 className="text-3xl font-bold">{config.title}</h1>
-        <Link href="/feed.xml">
+        <Link href="/feed.xml" prefetch={false} target="_blank" rel="noopener">
           <span aria-hidden className="sr-only">
             RSS Feed
           </span>
